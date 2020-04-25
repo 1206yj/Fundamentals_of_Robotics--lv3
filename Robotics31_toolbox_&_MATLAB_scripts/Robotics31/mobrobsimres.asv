@@ -1,0 +1,15 @@
+function mobrobsimres(robot,map,x,r,xr,decimation)
+
+[nk, tmp] = size(x);
+
+for k = 1:decimation:nk
+       
+    
+    if k < nk
+        hold off
+    end    
+    
+    pause(0.001)
+end
+
+plot(x(:,1),x(:,2),'g')

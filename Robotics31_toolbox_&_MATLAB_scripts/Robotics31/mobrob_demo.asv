@@ -1,0 +1,81 @@
+clear
+
+% environment map
+
+map.dim = 2;
+
+map.X = [
+    0, 160;
+    160, 160;
+    160, 0;
+    0, 0;
+    5, 155;
+    155, 155;
+    155, 5;
+    5, 5;
+    75, 155;
+    80, 155;
+    75, 140;
+    80, 140;
+    75, 115;
+    80, 115;
+    75, 45;
+    80, 45;
+    75, 20;
+    80, 20;
+    75, 5;
+    80, 5;
+    5, 85;
+    75, 85;
+    5, 80;
+    75, 80    
+    ]'*0.05;
+
+map.S = [
+    1, 2, 6;
+    6, 5, 1;
+    2, 3, 6;
+    3, 7, 6;
+    3, 4, 8;
+    8, 7, 3;
+    4, 1, 8;
+    1, 5, 8;
+    9, 10, 12;
+    9, 12, 11;
+    13, 14, 16;
+    13, 16, 15;
+    17, 18, 20;
+    17, 20, 19;
+    21, 22, 24;
+    21, 24, 23
+    ]';
+
+map = edges2(map);
+
+map.nL = 4;
+
+map.L = []';
+
+% robot
+
+robot = createmobrob();
+
+x0 = [40*0.05 100*0.05 -pi/4]';
+
+% controller
+
+ctrlparam.T = 0.05;
+
+xr = [0 0 0];
+
+% environment perception
+
+%r = ultrasonic(robot, x0, map);
+
+% simulation
+
+%sim('mobrob_sim')
+
+% display results
+
+%mobrobsimres(robot,map,xd,r,xr,5)
